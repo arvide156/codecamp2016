@@ -41,6 +41,25 @@ angular.module('starter.controllers', [])
   };
 })
 
+.controller('SearchCtrl', function($scope, $ionicModal) {
+  // Create the login modal that we will use later
+  $ionicModal.fromTemplateUrl('templates/filter.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modal = modal;
+  });
+
+  // Open the login modal
+  $scope.filter = function() {
+    $scope.modal.show();
+  };
+
+  // Triggered in the login modal to close it
+  $scope.closeFilter = function() {
+    $scope.modal.hide();
+  };
+})
+
 .controller('PlaylistsCtrl', function($scope) {
   $scope.playlists = [
     { title: 'Reggae', id: 1 },
