@@ -192,12 +192,6 @@ angular.module('starter.controllers', [])
 })
 
 .controller('CreateEventCtrl', function($scope, $stateParams, $timeout, ionicMaterialMotion, ionicMaterialInk) {
-    $scope.$parent.showHeader();
-    $scope.$parent.clearFabs();
-    $scope.isExpanded = true;
-    $scope.$parent.setExpanded(false);
-    $scope.$parent.setHeaderFab('right');
-    $scope.$parent.hideConfig();
 
     $timeout(function() {
         ionicMaterialMotion.fadeSlideIn({

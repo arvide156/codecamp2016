@@ -38,17 +38,10 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic-material', 'io
         controller: 'AppCtrl'
     })
 
-    .state('app.create_event', {
+    .state('create_event', {
         url: '/create_event',
-        views: {
-            'menuContent': {
-                templateUrl: 'templates/create_event.html',
-                controller: 'CreateEventCtrl'
-            },
-            'fabContent': {
-                template: ''
-            }
-        }
+        templateUrl: 'templates/create_event.html',
+        controller: 'CreateEventCtrl'
     })
 
     .state('app.friends', {
@@ -96,25 +89,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic-material', 'io
                 controller: 'ProfileCtrl'
             }, 
             'fabContent' : {
-                template: '<button id="fab-profile" class="button button-fab button-fab-bottom-right button-positive" ng-click="openNewEvent()"><i class="icon ion-plus"></i></button>',
-                controller: function ($scope, $timeout, $ionicModal) {
-                    $ionicModal.fromTemplateUrl('templates/create_event.html', {
-                        scope: $scope,
-                        animation: 'slide-in-up'
-                    }).then(function(modal) {
-                        $scope.modal = modal;
-                    });
-                    $scope.openNewEvent = function() {
-                        $scope.modal.show();
-                    };
-                    $scope.closeNewEvent = function() {
-                        $scope.modal.hide();
-                    };
-
-                    $timeout(function () {
-                        document.getElementById('fab-profile').classList.toggle('on');
-                    }, 600);
-                }
+                template: '<button id="fab-profile" class="button button-fab button-fab-bottom-right button-positive" ui-sref="create_event"><i class="icon ion-plus"></i></button>'
             }
         }
     })

@@ -41,6 +41,11 @@
     .bar-assertive .title { text-shadow: none; }
 </style>
 <ion-view view-title="Create Event">
+    <ion-nav-bar class="bar-royal">
+        <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-android-arrow-back" menu-toggle="right" ng-click="$ionicGoBack($event)"></button>
+      </ion-nav-buttons>
+    </ion-nav-bar>
     <ion-content>
     <div class="gray_section bottom_dark_shadow center_vertical">
       <div class="tabs-icon-top">
@@ -92,7 +97,7 @@
 
     </div>
   </ion-content>
-  <ion-footer-bar align-title="center" class="bar-assertive" ng-click="closeNewEvent()">
+  <ion-footer-bar align-title="center" class="bar-assertive" ng-click="$ionicGoBack($event)">
     <h1 class="title">Save Your Event</h1>
   </ion-footer-bar>
 </ion-view>
