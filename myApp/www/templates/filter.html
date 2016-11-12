@@ -1,6 +1,6 @@
 <style>
 	#modal-content {
-		margin-top: 100px;
+		margin-top: 50px;
 	}
 
 	.item-thumbnail-top img {
@@ -24,7 +24,7 @@
 </style>
 <ion-modal-view>
 	<ion-nav-bar class="bar-dark" ng-class="{expanded: isExpanded, 'has-header-fab-left': hasHeaderFabLeft, 'has-header-fab-right': hasHeaderFabRight}" align-title="left">
-   		<button class="button button-fab button-stable button-fab-top-right expanded" ng-click="closeFilter()"><i class="icon ion-chevron-up"></i></button>
+   		<button class="button button-fab button-stable" style="float: right; margin: 5px 50px" ng-click="closeFilter()"><i class="icon ion-chevron-up"></i></button>
    		<div class="nav-bar-block" nav-bar="active">
    			<ion-header-bar class="bar-dark bar bar-header disable-user-behavior" align-title="left">
    				<div class="title title-left header-item">Filter Events</div>

@@ -124,7 +124,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic-material', 'io
                 controller: 'HomeCtrl'
             },
             'fabContent': {
-                template: '<button id="fab-filter" class="button button-fab button-fab-top-right expanded button-stable" ng-click="openFilter()"><i class="icon ion-chevron-down"></i></button>',
+                template: '<button class="button button-fab button-stable" style="float: right; margin: 5px 50px" ng-click="openFilter()"><i class="icon ion-chevron-down"></i></button>',
                 controller: function ($scope, $timeout, $ionicModal) {
                     $ionicModal.fromTemplateUrl('templates/filter.html', {
                         scope: $scope,
@@ -155,7 +155,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic-material', 'io
                 controller: 'HomeCtrl'
             },
             'fabContent': {
-                template: '<button id="fab-filter" class="button button-fab button-fab-top-right expanded button-stable" ng-click="openFilter()"><i class="icon ion-chevron-down"></i></button>',
+                template: '<button class="button button-fab button-stable" style="float: right; margin: 5px 50px" ng-click="openFilter()"><i class="icon ion-chevron-down"></i></button>',
                 controller: function ($scope, $timeout, $ionicModal) {
                     $ionicModal.fromTemplateUrl('templates/filter.html', {
                         scope: $scope,
