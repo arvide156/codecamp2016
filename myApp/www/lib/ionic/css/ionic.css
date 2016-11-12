@@ -5280,7 +5280,9 @@ a.item-content {
   padding-top: 1px;
   padding-bottom: 1px;
   padding-left: 0;
-  margin-bottom: 20px; }
+  margin-bottom: 20px; 
+  padding-right:25px;
+}
 
 .list:last-child {
   margin-bottom: 0px; }
@@ -6622,8 +6624,8 @@ progress {
         box-shadow: none;
         color: #fff; }
   .button.button-assertive {
-    border-color: #e42012;
-    background-color: #ef473a;
+/*    border-color: #e42012;*/
+    background-color: #50E3C2;
     color: #fff; }
     .button.button-assertive:hover {
       color: #fff;
