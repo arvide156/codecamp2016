@@ -1,11 +1,11 @@
 <ion-view view-title="Profile">
-    <ion-content ng-class="{expanded:$scope.isExpanded}">
+    <ion-content>
         <div class="hero slide-up" style="background-color: #EBEFF2;">
             <div class="content">
                 <div class="avatar" style="background-image: url('img/damian.png');"></div>
-                <h4 style="margin-bottom:0px;">Damian Trumpxican</h4>
+                <h4 style="margin-bottom:0px;">Damian Vera</h4>
                 <i class="button icon-left ion-star button-clear button-dark" style="padding:0; color:#FEC105;"><span style="color:#6F6F74;">4</span></i>
-                <button class="button button-balanced activated button_follow">Follow</button>
+                <button style="display: {{hideButton}}" class="button button-balanced activated button_follow">Follow</button>
             </div>
         </div>
         <div class="tabs tabs-dark tabs-icon-top static">
@@ -14,20 +14,27 @@
             <span class="tab-item" style="padding-top: 8px;"><span class="top">34</span>Badges</span>
         </div>
         <div class="list animate-fade-slide-in-right">
-            <a ui-sref="app.friends" class="item item-icon-right profile_item">
-                <h2>Jon Snow</h2>
-                <p><i class="icon_left ion-android-checkmark-circle"></i>23</p>
-                <i class="icon ion-star" style="color:#FEC105; font-size:18px;"><span style="color:#6F6F74;">4</span></i>
-            </a>
-            <a ui-sref="app.friends" class="item item-icon-right profile_item">
-                <h2>Sansa Stark</h2>
-                <p><i class="icon_left ion-android-checkmark-circle"></i>23</p>
-                <i class="icon ion-star" style="color:#FEC105; font-size:18px;"><span style="color:#6F6F74;">4</span></i>
-            </a>
-            <a ui-sref="app.friends" class="item item-icon-right profile_item">
-                <h2>Tyrion Lannister</h2>
-                <p><i class="icon_left ion-android-checkmark-circle"></i>23</p>
-                <i class="icon ion-star" style="color:#FEC105; font-size:18px;"><span style="color:#6F6F74;">4</span></i>
+            <a ui-sref="app.events" class="item item-icon-right profile_item" ng-repeat="event in events">
+                <div class="row">
+                    <div class="col col-90">
+                        <h2>{{event.nombre}}</h2>
+                    </div>
+                    <div class="col">
+                        <p class="subdued" style="font-size: 18px">
+                            <i class="icon-right ion-star" style="color:#FEC105;"></i>
+                            {{event.estrellas}}
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col col-90">
+                        <p><i class="icon_left ion-android-checkmark-circle"></i> {{event.personas}} People Joined</p>
+                    </div>
+
+                    <div class="col">
+                        <p class="subdued">{{event.horario}}</p>
+                    </div>
+                </div>
             </a>
         </div>
     </ion-content>

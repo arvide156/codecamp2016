@@ -104,6 +104,27 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic-material', 'io
             'menuContent': {
                 templateUrl: 'templates/profile.html',
                 controller: 'ProfileCtrl'
+            }, 
+            'fabContent' : {
+                template: '<button id="fab-profile" class="button button-fab button-fab-bottom-right button-positive" ng-click="openNewEvent()"><i class="icon ion-plus"></i></button>',
+                controller: function ($scope, $timeout, $ionicModal) {
+                    $ionicModal.fromTemplateUrl('templates/filter.html', {
+                        scope: $scope,
+                        animation: 'slide-in-up'
+                    }).then(function(modal) {
+                        $scope.modal = modal;
+                    });
+                    $scope.openNewEvent = function() {
+                        $scope.modal.show();
+                    };
+                    $scope.closeFilter = function() {
+                        $scope.modal.hide();
+                    };
+
+                    $timeout(function () {
+                        document.getElementById('fab-profile').classList.toggle('on');
+                    }, 600);
+                }
             }
         }
     })
@@ -116,7 +137,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic-material', 'io
                 controller: 'HomeCtrl'
             },
             'fabContent': {
-                template: '<button class="button button-fab button-stable" style="float: right; margin: 5px 50px" ng-click="openFilter()"><i class="icon ion-chevron-down"></i></button>',
+                template: '<button id="fab-filter" class="button button-fab button-stable" style="float: right; margin: 5px 50px" ng-click="openFilter()"><i class="icon ion-chevron-down"></i></button>',
                 controller: function ($scope, $timeout, $ionicModal) {
                     $ionicModal.fromTemplateUrl('templates/filter.html', {
                         scope: $scope,

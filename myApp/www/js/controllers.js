@@ -136,6 +136,13 @@ angular.module('starter.controllers', [])
     $scope.isExpanded = true;
     $scope.$parent.setExpanded(false);
     $scope.$parent.setHeaderFab(false);
+    $scope.hideButton = 'none';
+
+    $scope.events = [
+        {nombre: "Evento 1", personas: "5", estrellas:"4", horario:"5:00pm"},
+        {nombre: "Evento 2", personas: "10", estrellas:"5", horario:"10:00pm"},
+        {nombre: "Evento 3", personas: "15", estrellas:"5", horario:"Tomorrow"}
+    ]
 
     // Set Motion
     $timeout(function() {
@@ -196,12 +203,6 @@ angular.module('starter.controllers', [])
     $scope.isExpanded = false;
     $scope.$parent.setExpanded(false);
     $scope.$parent.setHeaderFab('right');
-
-    $timeout(function() {
-        ionicMaterialMotion.fadeSlideIn({
-            selector: '.animate-fade-slide-in .item'
-        });
-    }, 200);
 
     // Activate ink for controller
     ionicMaterialInk.displayEffect();
