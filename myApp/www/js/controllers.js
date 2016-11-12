@@ -1,6 +1,14 @@
 /* global angular, document, window */
 'use strict';
 
+var service_url = "http://damianvera93.esy.es/codecamp/";
+function convert_variables(object){
+    var string = "?";
+    for(var i = 0; i < object.length; i++){
+        console.log(object[i]);
+    }
+}
+
 angular.module('starter.controllers', [])
 
 .controller('AppCtrl', function($scope, $ionicModal, $ionicPopover, $timeout) {
@@ -87,11 +95,24 @@ angular.module('starter.controllers', [])
     };
 })
 
-.controller('LoginCtrl', function($scope, $timeout, $stateParams, ionicMaterialInk) {
-    $scope.$parent.clearFabs();
-    $timeout(function() {
-        $scope.$parent.hideHeader();
-    }, 0);
+.controller('LoginCtrl', function($scope, $timeout, $stateParams, ionicMaterialInk, $http, $state) {
+    $scope.user = {};
+    $scope.login = function(){
+        var data = {
+            'username' : $scope.user.username,
+            'password' : $scope.user.password
+        };
+
+        $http.post(service_url + 'login.php', data)
+        .success(function(data, status, headers, config) {
+            if(data != null){
+                $state.go("app.home");
+            }
+        })
+        .error(function(data, status, headers, config) {
+            console.log('error');
+        });
+    }
     ionicMaterialInk.displayEffect();
 })
 
