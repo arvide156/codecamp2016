@@ -1,4 +1,12 @@
 <style type="text/css">
+  .lds_input {
+        padding: 0;
+        border: 0;
+        border-bottom: 1px solid #ccc;
+        margin-bottom: 5px;
+        min-height: 37px;
+  }
+
 	.lds_input {
         padding: 0;
         border: 0;
@@ -16,23 +24,35 @@
 		</ion-nav-buttons>
 	</ion-nav-bar>
 	<ion-content class="padding" style="padding-top: 50px !important;">
-		<label class="item item-input lds_input">
-        	<input type="text" placeholder="Name" class="lds_input_large">
-      	</label>
-      	<label class="item item-input lds_input" style="margin-bottom: 60px;">
-        	<input type="email" placeholder="Email">
-      	</label>
+      <a class="#">
+        <div class="row">
+          <div class="col-20">
+            <img src="img/Add Photo.png"/>
+          </div>
+          <div class="col">
+            <span class="stable" style="margin-top: 10px;">Add Profile Picture</span>
+          </div>
+        </div>
+      </a>
 
-      	<label style="color:#4f4f4f; margin-bottom: 20px; display: block;">Change Password</label>
-      	<label class="item item-input lds_input">
-        	<input type="password" placeholder="Current Password">
-      	</label>
-      	<label class="item item-input lds_input">
-        	<input type="password" placeholder="New Password">
-      	</label>
-      	<label class="item item-input lds_input">
-        	<input type="password" placeholder="Confirm New Password">
-      	</label>
+      <div class="padding" style="padding-top: 30px;">
+	    <label class="item item-input lds_input">
+      	<input type="text" placeholder="Name" class="lds_input_large">
+    	</label>
+    	<label class="item item-input lds_input" style="margin-bottom: 60px;">
+      	<input type="email" placeholder="Email">
+    	</label>
+
+    	<label style="color:#4f4f4f; margin-bottom: 20px; display: block;">Change Password</label>
+    	<label class="item item-input lds_input">
+      	<input type="password" placeholder="Current Password">
+    	</label>
+    	<label class="item item-input lds_input">
+      	<input type="password" placeholder="New Password">
+    	</label>
+    	<label class="item item-input lds_input">
+      	<input type="password" placeholder="Confirm New Password">
+    	</label>
 	</ion-content>
 	<ion-footer-bar align-title="center" style="background-color: #4FE3C1 !important;" ng-click="goBack()">
 		<h1 class="title" style="text-shadow: none;">Save Changes</h1>

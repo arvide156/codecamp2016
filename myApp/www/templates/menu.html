@@ -1,8 +1,13 @@
-<ion-side-menus enable-menu-with-back-views="false">
+<ion-side-menus enable-menu-with-back-views="true">
     <ion-side-menu-content>
         <ion-nav-bar class="bar-royal" ng-class="{expanded: isExpanded, 'has-header-fab-left': hasHeaderFabLeft, 'has-header-fab-right': hasHeaderFabRight}" align-title="left">
             <ion-nav-back-button class="no-text">
             </ion-nav-back-button>
+            
+            <ion-nav-buttons side="left">
+                <button class="{{show_back}} button button-icon button-clear ion-android-arrow-back" ng-click="$ionicGoBack($event)" style="color:#fff;"></button>
+            </ion-nav-buttons>
+
             <ion-nav-buttons side="right">
                 <button class="{{show_config}} button button-icon button-clear ion-gear-b" ng-click="goToSettings()" style="color:#fff;"></button>
                 <button class="{{show_edit}} button button-icon button-clear ion-edit" ng-click="editEvent()" style="color:#fff;"></button>

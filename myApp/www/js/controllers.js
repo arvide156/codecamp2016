@@ -13,6 +13,7 @@ angular.module('starter.controllers', [])
     $scope.hasHeaderFabRight = false;
     $scope.show_config = "hide";
     $scope.show_edit = "hide";
+    $scope.show_back = "hide";
 
     var navIcons = document.getElementsByClassName('ion-navicon');
     for (var i = 0; i < navIcons.length; i++) {
@@ -109,6 +110,13 @@ angular.module('starter.controllers', [])
     $scope.editEvent = function() {
         $state.go("create_event");
     }
+
+    $scope.showBack = function() {
+        $scope.show_back = "";
+    }
+    $scope.hideBack = function() {
+        $scope.show_back = "hide";
+    }
 })
 
 .controller('LoginCtrl', function($scope, $timeout, $stateParams, ionicMaterialInk, $http, $state) {
@@ -139,6 +147,7 @@ angular.module('starter.controllers', [])
     $scope.$parent.setHeaderFab('left');
     $scope.$parent.hideConfig();
     $scope.$parent.hideEdit();
+    $scope.$parent.showBack();
 
     // Delay expansion
     $timeout(function() {
@@ -163,6 +172,7 @@ angular.module('starter.controllers', [])
     $scope.hideButton = 'none';
     $scope.$parent.showConfig();
     $scope.$parent.hideEdit();
+    $scope.$parent.showBack();
 
     $scope.events = [
         {nombre: "Evento 1", personas: "5", estrellas:"4", horario:"5:00pm"},
@@ -203,6 +213,7 @@ angular.module('starter.controllers', [])
     $scope.hideButton = 'none';
     $scope.$parent.hideConfig();
     $scope.$parent.hideEdit();
+    $scope.$parent.showBack();
 
     $scope.events = [
         {nombre: "Evento 4", personas: "5", estrellas:"4", horario:"5:00pm"},
@@ -278,6 +289,7 @@ angular.module('starter.controllers', [])
     $scope.$parent.setHeaderFab('right');
     $scope.$parent.hideConfig();
     $scope.$parent.hideEdit();
+    $scope.$parent.hideBack();
 
     function initialize() {
 
@@ -377,6 +389,7 @@ angular.module('starter.controllers', [])
     $scope.$parent.setHeaderFab('right');
     $scope.$parent.hideConfig();
     $scope.$parent.hideEdit();
+    $scope.$parent.showBack();
 
     $timeout(function() {
         ionicMaterialMotion.fadeSlideIn({
@@ -396,6 +409,7 @@ angular.module('starter.controllers', [])
     $scope.$parent.setHeaderFab('right');
     $scope.$parent.hideConfig();
     $scope.$parent.showEdit();
+    $scope.$parent.showBack();
 
     $timeout(function() {
         ionicMaterialMotion.fadeSlideIn({

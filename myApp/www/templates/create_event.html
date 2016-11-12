@@ -5,16 +5,13 @@
         background-color: #EBEFF2;
         min-height: 180px;
     }
-    .gray_section.center_vertical {
-        line-height: 150px;
-    }
     .bottom_dark_shadow { box-shadow: 0px 0px 10px 0px #4a4a4a; }
 
     .plus_icon {
         color: #777 !important;
         margin: 0 auto;
+        padding: 50px 0;
     }
-    .plus_icon .icon { margin-bottom: -10px; }
     .lds_input {
         padding: 0;
         border: 0;
@@ -34,11 +31,7 @@
         display: block;
         color: #777;
     }
-    .bar-assertive {
-        background-color: #4FE3C1 !important;
-        background-image: none !important;
-    }
-    .bar-assertive .title { text-shadow: none; }
+    .bar-positive .title { text-shadow: none; }
 </style>
 <ion-view view-title="Create Event">
     <ion-nav-bar class="bar-royal">
@@ -49,7 +42,10 @@
     <ion-content>
     <div class="gray_section bottom_dark_shadow center_vertical">
       <div class="tabs-icon-top">
-        <a class="tab-item plus_icon"><i class="icon ion-plus"></i>Add Event Image</a>
+        <a class="tab-item plus_icon">
+          <img src="img/Add Photo.png"/> <br />
+          Add Event Image
+        </a>
       </div>
     </div>
     <div class="padding" style="padding-top: 30px;">
@@ -97,7 +93,7 @@
 
     </div>
   </ion-content>
-  <ion-footer-bar align-title="center" class="bar-assertive" ng-click="$ionicGoBack($event)">
-    <h1 class="title">Save Your Event</h1>
+  <ion-footer-bar align-title="center" class="bar-positive" ng-click="$ionicGoBack($event)">
+    <h1 class="title light">Save Your Event</h1>
   </ion-footer-bar>
 </ion-view>
