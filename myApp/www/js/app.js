@@ -146,6 +146,19 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic-material', 'io
             }
         }
     })
+
+    .state('app.event', {
+        url: '/event',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/event.html',
+                controller: 'EventCtrl'
+            },
+            'fabContent': {
+                template: ''
+            }
+        }
+    })
     ;
 
     // if none of the above states are matched, use this as the fallback
