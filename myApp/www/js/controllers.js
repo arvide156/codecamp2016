@@ -5,12 +5,13 @@ var service_url = "http://damianvera93.esy.es/codecamp/";
 
 angular.module('starter.controllers', [])
 
-.controller('AppCtrl', function($scope, $ionicModal, $ionicPopover, $timeout) {
+.controller('AppCtrl', function($scope, $ionicModal, $ionicPopover, $timeout, $state) {
     // Form data for the login modal
     $scope.loginData = {};
     $scope.isExpanded = false;
     $scope.hasHeaderFabLeft = false;
     $scope.hasHeaderFabRight = false;
+    $scope.show_config = "hide";
 
     var navIcons = document.getElementsByClassName('ion-navicon');
     for (var i = 0; i < navIcons.length; i++) {
@@ -87,6 +88,16 @@ angular.module('starter.controllers', [])
             fabs[0].remove();
         }
     };
+
+    $scope.showConfig = function() {
+        $scope.show_config = "";
+    }
+    $scope.hideConfig = function() {
+        $scope.show_config = "hide";
+    }
+    $scope.goToSettings = function() {
+        $state.go("settings");
+    }
 })
 
 .controller('LoginCtrl', function($scope, $timeout, $stateParams, ionicMaterialInk, $http, $state) {
@@ -115,6 +126,7 @@ angular.module('starter.controllers', [])
     $scope.$parent.showHeader();
     $scope.$parent.clearFabs();
     $scope.$parent.setHeaderFab('left');
+    $scope.$parent.hideConfig();
 
     // Delay expansion
     $timeout(function() {
@@ -137,6 +149,7 @@ angular.module('starter.controllers', [])
     $scope.$parent.setExpanded(false);
     $scope.$parent.setHeaderFab(false);
     $scope.hideButton = 'none';
+    $scope.$parent.showConfig();
 
     $scope.events = [
         {nombre: "Evento 1", personas: "5", estrellas:"4", horario:"5:00pm"},
@@ -161,12 +174,19 @@ angular.module('starter.controllers', [])
     ionicMaterialInk.displayEffect();
 })
 
+.controller('SettingsCtrl', function($scope, $state){
+    $scope.goBack = function() {
+        $state.go("app.profile");
+    }
+})
+
 .controller('CreateEventCtrl', function($scope, $stateParams, $timeout, ionicMaterialMotion, ionicMaterialInk) {
     $scope.$parent.showHeader();
     $scope.$parent.clearFabs();
     $scope.isExpanded = true;
     $scope.$parent.setExpanded(false);
     $scope.$parent.setHeaderFab('right');
+    $scope.$parent.hideConfig();
 
     $timeout(function() {
         ionicMaterialMotion.fadeSlideIn({
@@ -184,6 +204,7 @@ angular.module('starter.controllers', [])
     $scope.isExpanded = false;
     $scope.$parent.setExpanded(false);
     $scope.$parent.setHeaderFab(false);
+    $scope.$parent.hideConfig();
 
     // Activate ink for controller
     ionicMaterialInk.displayEffect();
@@ -222,6 +243,7 @@ angular.module('starter.controllers', [])
     $scope.isExpanded = false;
     $scope.$parent.setExpanded(false);
     $scope.$parent.setHeaderFab('right');
+    $scope.$parent.hideConfig();
 
     // Activate ink for controller
     ionicMaterialInk.displayEffect();
@@ -233,6 +255,7 @@ angular.module('starter.controllers', [])
     $scope.isExpanded = false;
     $scope.$parent.setExpanded(false);
     $scope.$parent.setHeaderFab('right');
+    $scope.$parent.hideConfig();
 
     $timeout(function() {
         ionicMaterialMotion.fadeSlideIn({

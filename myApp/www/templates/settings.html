@@ -1,0 +1,40 @@
+<style type="text/css">
+	.lds_input {
+        padding: 0;
+        border: 0;
+        border-bottom: 1px solid #ccc;
+        margin-bottom: 15px;
+        min-height: 37px;
+        font-size: 18px;
+    }
+    .lds_input .lds_input_large { font-size: 20px; }
+</style>
+<ion-view view-title="Account Settings">
+	<ion-nav-bar class="bar-royal">
+	    <ion-nav-buttons side="left">
+			<button class="button button-icon button-clear ion-android-arrow-back" menu-toggle="right" ng-click="goBack()"></button>
+		</ion-nav-buttons>
+	</ion-nav-bar>
+	<ion-content class="padding" style="padding-top: 50px !important;">
+		<label class="item item-input lds_input">
+        	<input type="text" placeholder="Name" class="lds_input_large">
+      	</label>
+      	<label class="item item-input lds_input" style="margin-bottom: 60px;">
+        	<input type="email" placeholder="Email">
+      	</label>
+
+      	<label style="color:#4f4f4f; margin-bottom: 20px; display: block;">Change Password</label>
+      	<label class="item item-input lds_input">
+        	<input type="password" placeholder="Current Password">
+      	</label>
+      	<label class="item item-input lds_input">
+        	<input type="password" placeholder="New Password">
+      	</label>
+      	<label class="item item-input lds_input">
+        	<input type="password" placeholder="Confirm New Password">
+      	</label>
+	</ion-content>
+	<ion-footer-bar align-title="center" style="background-color: #4FE3C1 !important;" ng-click="goBack()">
+		<h1 class="title" style="text-shadow: none;">Save Changes</h1>
+	</ion-footer-bar>
+</ion-view>
