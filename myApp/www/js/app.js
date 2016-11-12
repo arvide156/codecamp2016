@@ -103,7 +103,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic-material', 'io
             'fabContent' : {
                 template: '<button id="fab-profile" class="button button-fab button-fab-bottom-right button-positive" ng-click="openNewEvent()"><i class="icon ion-plus"></i></button>',
                 controller: function ($scope, $timeout, $ionicModal) {
-                    $ionicModal.fromTemplateUrl('templates/filter.html', {
+                    $ionicModal.fromTemplateUrl('templates/create_event.html', {
                         scope: $scope,
                         animation: 'slide-in-up'
                     }).then(function(modal) {
@@ -112,7 +112,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic-material', 'io
                     $scope.openNewEvent = function() {
                         $scope.modal.show();
                     };
-                    $scope.closeFilter = function() {
+                    $scope.closeNewEvent = function() {
                         $scope.modal.hide();
                     };
 

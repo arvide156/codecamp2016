@@ -99,3 +99,12 @@ p {
 .profile_item {
     border: 1px solid #ddd !important;
 }
+
+/*Color Scheme Changes*/
+.bar-royal {
+    background-color: #883d97 !important;
+}
+
+.button-positive {
+    background-color: #50e3c2 !important;
+}
