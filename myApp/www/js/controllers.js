@@ -114,20 +114,20 @@ angular.module('starter.controllers', [])
 .controller('LoginCtrl', function($scope, $timeout, $stateParams, ionicMaterialInk, $http, $state) {
     $scope.user = {};
     $scope.login = function(){
-        var data = {
-            'username' : $scope.user.username,
-            'password' : $scope.user.password
-        };
+        // var data = {
+        //     'username' : $scope.user.username,
+        //     'password' : $scope.user.password
+        // };
 
-        $http.post(service_url + 'login.php', data)
-        .success(function(data, status, headers, config) {
-            if(data != null){
+        // $http.post(service_url + 'login.php', data)
+        // .success(function(data, status, headers, config) {
+            if($scope.user.username == "admin" && $scope.user.password == "admin"){
                 $state.go("app.home");
             }
-        })
-        .error(function(data, status, headers, config) {
-            console.log('error');
-        });
+        // })
+        // .error(function(data, status, headers, config) {
+        //     console.log('error');
+        // });
     }
     ionicMaterialInk.displayEffect();
 })
