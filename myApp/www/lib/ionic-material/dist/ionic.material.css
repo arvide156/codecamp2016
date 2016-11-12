@@ -72,7 +72,7 @@
   background: #444; }
 
 .item-md-label .input-label {
-  letter-spacing: 0.25rem;
+/*  letter-spacing: 0.25rem;*/
   padding: 0 10px; }
 
 .item-md-label input:focus ~ .input-label, .item-md-label input.used ~ .input-label {
