@@ -1,0 +1,50 @@
+<ion-view view-title="Event">
+    <ion-nav-bar class="bar-royal">
+        <ion-nav-buttons side="left">
+            <button class="button button-icon button-clear ion-pencil" menu-toggle="right" ng-click="editEvent()"></button>
+        </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-content>
+        <div class="hero slide-in" style="background-image: url('img/profile-bg.jpg');">
+            <div class="content">
+                <h3><a class="light icon ion-map" style="float:right; margin-right: 10px;"></a></h3>
+            </div>
+        </div>
+        <div class="dark-bg static">
+            <div class="row">
+                <div class="col">
+                    <h3 class="light">Event Title</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <h5 class="stable"><a ui-sref="app.profile">Event Organizer</a></h5>
+                </div>
+                <div class="col">
+                    <h5><i class="icon ion-star energized"></i> <span class="stable">5</span></h5>
+                </div>
+            </div>
+        </div>
+        <div class="list animate-fade-slide-in">
+            <div class="row">
+                <div class="col">
+                    <h3>3:30 Today</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <p class="subdued">Immerse yourself in the scenic beauty of Zion National Park. We will be doing the Hidden Canyon hike and anyone is welcome to join</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <h3>6 People Joined</h3>
+                </div>
+            </div>
+        </div>
+        
+        <div class="button-bar">
+            <a class="button button-positive">Share Your Event</a>
+        </div>
+    </ion-content>
+</ion-view>

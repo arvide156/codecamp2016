@@ -162,6 +162,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic-material', 'io
             'menuContent': {
                 templateUrl: 'templates/event.html',
                 controller: 'EventCtrl'
+            }
+        }
+    })
+
+    .state('app.my_event', {
+        url: '/my_event',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/my_event.html',
+                controller: 'EventCtrl'
             },
             'fabContent': {
                 template: ''

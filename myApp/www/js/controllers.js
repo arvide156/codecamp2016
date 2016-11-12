@@ -12,6 +12,7 @@ angular.module('starter.controllers', [])
     $scope.hasHeaderFabLeft = false;
     $scope.hasHeaderFabRight = false;
     $scope.show_config = "hide";
+    $scope.show_edit = "hide";
 
     var navIcons = document.getElementsByClassName('ion-navicon');
     for (var i = 0; i < navIcons.length; i++) {
@@ -97,6 +98,16 @@ angular.module('starter.controllers', [])
     }
     $scope.goToSettings = function() {
         $state.go("settings");
+    }
+
+    $scope.showEdit = function() {
+        $scope.show_edit = "";
+    }
+    $scope.hideEdit = function() {
+        $scope.show_edit = "hide";
+    }
+    $scope.editEvent = function() {
+        $state.go("app.create_event");
     }
 })
 
