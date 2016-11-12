@@ -1,0 +1,98 @@
+<style type="text/css">
+    .icon_small_create_event:before { font-size: 18px !important; }
+
+    .gray_section {
+        background-color: #EBEFF2;
+        min-height: 180px;
+    }
+    .gray_section.center_vertical {
+        line-height: 150px;
+    }
+    .bottom_dark_shadow { box-shadow: 0px 0px 10px 0px #4a4a4a; }
+
+    .plus_icon {
+        color: #777 !important;
+        margin: 0 auto;
+    }
+    .plus_icon .icon { margin-bottom: -10px; }
+    .lds_input {
+        padding: 0;
+        border: 0;
+        border-bottom: 1px solid #ccc;
+        margin-bottom: 5px;
+        min-height: 37px;
+    }
+    .lds_input .lds_input_large { font-size: 20px; }
+    .lds_checkbox {
+        width: 20px !important;
+        height: 20px !important;
+    }
+    .lds_checkbox:before { border-radius: 0px !important; }
+    .event_description {
+        margin-top: 10px;
+        font-size: 14px;
+        display: block;
+        color: #777;
+    }
+    .bar-assertive {
+        background-color: #4FE3C1 !important;
+        background-image: none !important;
+    }
+    .bar-assertive .title { text-shadow: none; }
+</style>
+<ion-view view-title="Create Event">
+    <ion-content>
+    <div class="gray_section bottom_dark_shadow center_vertical">
+      <div class="tabs-icon-top">
+        <a class="tab-item plus_icon"><i class="icon ion-plus"></i>Add Event Image</a>
+      </div>
+    </div>
+    <div class="padding" style="padding-top: 30px;">
+
+      <label class="item item-input lds_input">
+        <input type="text" placeholder="Event Title" class="lds_input_large">
+      </label>
+
+      <label class="item item-input item-select lds_input">
+        <div class="input-label">{{category}}</div>
+        <select ng-model="select_category" ng-change="category=select_category" style="color: #fff;">
+          <option></option>
+          <option>Sport</option>
+          <option>Music</option>
+        </select>
+      </label>
+
+      <div class="row" style="padding: 0px;">
+        <div class="col col-67" style="padding: 0px;">
+          <label class="item item-input item-select lds_input">
+              <div class="input-label">{{set_time}}</div>
+              <select ng-model="select_time" ng-change="set_time=select_time" style="color: #fff;">
+                <option></option>
+                <option>1:00 pm</option>
+                <option>2:00 pm</option>
+              </select>
+            </label>
+        </div>
+        <div class="col col-33" style="padding: 0px;">
+          <label class="item item-checkbox ng-empty ng-valid" ng-model="filter.red" style="border: none;padding: 0px;padding-left: 35px;padding-top: 10px;">
+            <div class="checkbox checkbox-input-hidden disable-pointer-events checkbox-square" style="left:0px;">
+                <input type="checkbox" ng-model="filter.red" class="ng-pristine ng-untouched ng-valid ng-empty" style=""><i class="checkbox-icon" style="margin-top: 8px;"></i>
+            </div>
+            <div class="item-content disable-pointer-events"><span>Tomorrow</span></div>
+        </label>
+        </div>
+      </div>
+      <span class="event_description">Event Description</span>
+      <textarea style="width: 100%; border-bottom: 1px solid #ccc; font-size: 16px; margin-bottom: 10px;" rows="3"></textarea>
+
+       <label class="item item-input item-icon-right lds_input">
+        <input type="text" placeholder="Location">
+        <i class="icon ion-android-locate placeholder-icon icon_small_create_event"></i>
+      </label>
+
+    </div>
+  </ion-content>
+  <ion-footer-bar align-title="center" class="bar-assertive">
+    <h1 class="title">Save Your Event</h1>
+  </ion-footer-bar>
+</ion-view>
