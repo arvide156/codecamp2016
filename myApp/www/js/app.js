@@ -30,7 +30,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic-material', 'io
     $ionicConfigProvider.backButton.previousTitleText(false);
     */
 
-    $stateProvider.state('app', {
+    $stateProvider
+    .state('app', {
         url: '/app',
         abstract: true,
         templateUrl: 'templates/menu.html',
@@ -91,17 +92,10 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic-material', 'io
         }
     })
 
-    .state('app.login', {
+    .state('login', {
         url: '/login',
-        views: {
-            'menuContent': {
-                templateUrl: 'templates/login.html',
-                controller: 'LoginCtrl'
-            },
-            'fabContent': {
-                template: ''
-            }
-        }
+        templateUrl: 'templates/login.html',
+        controller: 'LoginCtrl'
     })
 
     .state('app.profile', {
@@ -142,5 +136,5 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic-material', 'io
     ;
 
     // if none of the above states are matched, use this as the fallback
-    $urlRouterProvider.otherwise('/app/login');
+    $urlRouterProvider.otherwise('/login');
 });
