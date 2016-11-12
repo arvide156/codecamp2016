@@ -178,11 +178,11 @@ angular.module('starter.controllers', [])
     ionicMaterialInk.displayEffect();
 })
 
-.controller('GalleryCtrl', function($scope, $stateParams, $timeout, ionicMaterialInk, ionicMaterialMotion) {
+.controller('EventsCtrl', function($scope, $stateParams, $timeout, ionicMaterialInk, ionicMaterialMotion, $ionicPopup) {
     $scope.$parent.showHeader();
     $scope.$parent.clearFabs();
-    $scope.isExpanded = true;
-    $scope.$parent.setExpanded(true);
+    $scope.isExpanded = false;
+    $scope.$parent.setExpanded(false);
     $scope.$parent.setHeaderFab(false);
 
     // Activate ink for controller
@@ -194,6 +194,25 @@ angular.module('starter.controllers', [])
     ionicMaterialMotion.fadeSlideInRight({
         selector: '.animate-fade-slide-in .item'
     });
+
+    $scope.showPopup = function() {
+        $scope.data = {};
+        $ionicPopup.show({
+            template: '<div style="text-align:center"><h2>Event Title</h2><p>Event Organizer</p><button class="icon ion-android-star-outline"></button><button class="icon ion-android-star-outline"></button><button class="icon ion-android-star-outline"></button><button class="icon ion-android-star-outline"></button><button class="icon ion-android-star-outline"></button></div>',
+            title: 'How was the event?',
+            subTitle: '',
+            scope: $scope,
+            buttons: [
+            {
+                text: '<b>Submit</b>',
+                type: 'button-positive',
+                onTap: function(e) {
+                    // add your action
+                }
+            }
+            ]
+        });
+    }
 
 })
 
