@@ -146,6 +146,37 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic-material', 'io
             }
         }
     })
+
+    .state('app.map', {
+        url: '/map',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/map.html',
+                controller: 'HomeCtrl'
+            },
+            'fabContent': {
+                template: '<button id="fab-filter" class="button button-fab button-fab-top-right expanded button-stable" ng-click="openFilter()"><i class="icon ion-chevron-down"></i></button>',
+                controller: function ($scope, $timeout, $ionicModal) {
+                    $ionicModal.fromTemplateUrl('templates/filter.html', {
+                        scope: $scope,
+                        animation: 'slide-in-up'
+                    }).then(function(modal) {
+                        $scope.modal = modal;
+                    });
+                    $scope.openFilter = function() {
+                        $scope.modal.show();
+                    };
+                    $scope.closeFilter = function() {
+                        $scope.modal.hide();
+                    };
+
+                    $timeout(function () {
+                        document.getElementById('fab-filter').classList.toggle('on');
+                    }, 600);
+                }
+            }
+        }
+    })
     ;
 
     // if none of the above states are matched, use this as the fallback
