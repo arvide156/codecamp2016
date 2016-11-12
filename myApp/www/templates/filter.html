@@ -1,59 +1,88 @@
 <style>
+	#modal-content {
+		margin-top: 100px;
+	}
+
 	.item-thumbnail-top img {
 		border-radius: 50%;
 		height: 75px;
 		width: 75px;
 	}
+
+	.item {
+		border: 0;
+	}
+
+	.item p {
+		font-size: 10px;
+	}
+
+	.button-risen {
+		padding: 0 10px;
+		width: 100%;
+	}
 </style>
 <ion-modal-view>
-   	<ion-content>
-   		<div class="row">
-	   		<div class="col col-80">
-	     		<h4>Filter Events</h4>
-	     	</div>
-	     	<div class="col">
-	       		<button class="button button-clear button-dark ink-dark" ng-click="closeFilter()"><i class="icon ion-chevron-up"></i></button>
-	     	</div>
-	    </div>
+	<ion-nav-bar class="bar-dark" ng-class="{expanded: isExpanded, 'has-header-fab-left': hasHeaderFabLeft, 'has-header-fab-right': hasHeaderFabRight}" align-title="left">
+   		<button class="button button-fab button-stable button-fab-top-right expanded" ng-click="closeFilter()"><i class="icon ion-chevron-up"></i></button>
+   		<div class="nav-bar-block" nav-bar="active">
+   			<ion-header-bar class="bar-dark bar bar-header disable-user-behavior" align-title="left">
+   				<div class="title title-left header-item">Filter Events</div>
+   			</ion-header-bar>
+   		</div>
+    </ion-nav-bar>
 
-	    <div class="list half">
-            <a class="item item-thumbnail-top"> 
-                <img src="img/sansa-snowcastle.png"> 
-                <p>Category 1</p> 
-            </a> 
-            <a class="item item-thumbnail-top"> 
-                <img src="img/sansa-snowcastle.png"> 
-                <p>Category 2</p> 
-            </a> 
-            <a class="item item-thumbnail-top"> 
-                <img src="img/sansa-snowcastle.png"> 
-                <p>Category 3</p>
-            </a> 
+   	<ion-content id="modal-content">
+	    <div class="row">
+	    	<div class="col">
+	            <a class="item item-thumbnail-top"> 
+	                <img src="http://placehold.it/75x75"> 
+	                <p style="text-align: center">Recreation</p> 
+	            </a> 
+	        </div>
+	        <div class="col">
+	            <a class="item item-thumbnail-top"> 
+	                <img src="http://placehold.it/75x75"> 
+	                <p style="text-align: center">Entertainment</p> 
+	            </a> 
+	        </div>
+	        <div class="col">
+	            <a class="item item-thumbnail-top"> 
+	                <img src="http://placehold.it/75x75"> 
+	                <p style="text-align: center">Food & Drink</p> 
+	            </a> 
+	        </div>
         </div>
 
-        <div class="list half">
-            <a class="item item-thumbnail-top"> 
-                <img src="img/sansa-snowcastle.png"> 
-                <p>Category 4</p> 
-            </a> 
-            <a class="item item-thumbnail-top"> 
-                <img src="img/sansa-snowcastle.png"> 
-                <p>Category 5</p> 
-            </a> 
-            <a class="item item-thumbnail-top"> 
-                <img src="img/sansa-snowcastle.png"> 
-                <p>Category 6</p>
-            </a> 
+        <div class="row">
+	    	<div class="col">
+	            <a class="item item-thumbnail-top"> 
+	                <img src="http://placehold.it/75x75"> 
+	                <p style="text-align: center">Attractions</p> 
+	            </a> 
+	        </div>
+	        <div class="col">
+	            <a class="item item-thumbnail-top"> 
+	                <img src="http://placehold.it/75x75"> 
+	                <p style="text-align: center">Community</p> 
+	            </a> 
+	        </div>
+	        <div class="col">
+	            <a class="item item-thumbnail-top"> 
+	                <img src="http://placehold.it/75x75"> 
+	                <p style="text-align: center">Fun & Games</p> 
+	            </a> 
+	        </div>
         </div>
 
        	<div class="row">
-	        <div class="col">
+	        <div class="col col-33">
 			  	<a class="button button-risen button-energized-900">Right Now</a>
 			</div>
-			<div class="col">
+			<div class="col col-33">
 			  	<a class="button button-risen button-energized">Today</a>
 			</div>
-			<div class="col">
+			<div class="col col-33">
 			  	<a class="button button-risen button-balanced">Tomorrow</a>
 			</div>
 		</div>

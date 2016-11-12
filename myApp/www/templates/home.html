@@ -1,16 +1,26 @@
-<ion-view view-title="Let's Do Something" align-title="left">
+<style>
+	#switch {
+		position: absolute;
+		bottom: 10%;
+	}
+</style>
+
+<ion-view view-title="Filter Events" align-title="left">
 	<ion-content ng-class="{expanded:isExpanded}" class="animate-fade-slide-in">
-		<div class="row">
-			<div class="col col-80">
-				<h4>Filter Events</h4>
-			</div>
-			<div class="col">
-				<button class="button button-clear button-dark" ng-click="openFilter()"><i class="icon ion-chevron-down"></i></button>
-			</div>
-		</div>
  		<div class="row">
  			<div class="col">
  				Here goes the map.
+ 			</div>
+ 		</div>
+
+ 		<div class="row" id="switch">
+ 			<div class="col col-33">
+ 				<div ui-sref="app.profile" class="card card-gallery item item-text-wrap">
+	                <div class="ink clear-bg" style="text-align: center">
+	                    <img class="full-image" src="http://placehold.it/112x67">
+	                    <p>Radar View</p>
+	                </div>
+	            </div>
  			</div>
  		</div>
 
