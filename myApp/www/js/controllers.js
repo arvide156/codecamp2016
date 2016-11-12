@@ -107,7 +107,7 @@ angular.module('starter.controllers', [])
         $scope.show_edit = "hide";
     }
     $scope.editEvent = function() {
-        $state.go("app.create_event");
+        $state.go("create_event");
     }
 })
 
@@ -138,6 +138,7 @@ angular.module('starter.controllers', [])
     $scope.$parent.clearFabs();
     $scope.$parent.setHeaderFab('left');
     $scope.$parent.hideConfig();
+    $scope.$parent.hideEdit();
 
     // Delay expansion
     $timeout(function() {
@@ -161,6 +162,7 @@ angular.module('starter.controllers', [])
     $scope.$parent.setHeaderFab(false);
     $scope.hideButton = 'none';
     $scope.$parent.showConfig();
+    $scope.$parent.hideEdit();
 
     $scope.events = [
         {nombre: "Evento 1", personas: "5", estrellas:"4", horario:"5:00pm"},
@@ -191,26 +193,52 @@ angular.module('starter.controllers', [])
     }
 })
 
-.controller('CreateEventCtrl', function($scope, $stateParams, $timeout, ionicMaterialMotion, ionicMaterialInk) {
+.controller('OtherProfileCtrl', function($scope, $stateParams, $timeout, ionicMaterialMotion, ionicMaterialInk) {
+    // Set Header
+    $scope.$parent.showHeader();
+    $scope.$parent.clearFabs();
+    $scope.isExpanded = true;
+    $scope.$parent.setExpanded(false);
+    $scope.$parent.setHeaderFab(false);
+    $scope.hideButton = 'none';
+    $scope.$parent.hideConfig();
+    $scope.$parent.hideEdit();
+
+    $scope.events = [
+        {nombre: "Evento 4", personas: "5", estrellas:"4", horario:"5:00pm"},
+        {nombre: "Evento 5", personas: "10", estrellas:"5", horario:"10:00pm"},
+        {nombre: "Evento 6", personas: "15", estrellas:"5", horario:"Tomorrow"}
+    ]
+
+    // Set Motion
+    $timeout(function() {
+        ionicMaterialMotion.slideUp({
+            selector: '.slide-up'
+        });
+    }, 300);
 
     $timeout(function() {
-        ionicMaterialMotion.fadeSlideIn({
-            selector: '.animate-fade-slide-in .item'
+        ionicMaterialMotion.fadeSlideInRight({
+            startVelocity: 3000
         });
-    }, 200);
+    }, 700);
 
+    // Set Ink
+    ionicMaterialInk.displayEffect();
+})
+
+.controller('SettingsCtrl', function($scope, $state){
+    $scope.goBack = function() {
+        $state.go("app.profile");
+    }
+})
+
+.controller('CreateEventCtrl', function($scope, $stateParams, $timeout, ionicMaterialMotion, ionicMaterialInk) {
     // Activate ink for controller
     ionicMaterialInk.displayEffect();
 })
 
 .controller('EventsCtrl', function($scope, $stateParams, $timeout, ionicMaterialInk, ionicMaterialMotion, $ionicPopup) {
-    $scope.$parent.showHeader();
-    $scope.$parent.clearFabs();
-    $scope.isExpanded = false;
-    $scope.$parent.setExpanded(false);
-    $scope.$parent.setHeaderFab(false);
-    $scope.$parent.hideConfig();
-
     // Activate ink for controller
     ionicMaterialInk.displayEffect();
 
@@ -249,6 +277,7 @@ angular.module('starter.controllers', [])
     $scope.$parent.setExpanded(false);
     $scope.$parent.setHeaderFab('right');
     $scope.$parent.hideConfig();
+    $scope.$parent.hideEdit();
 
     // Activate ink for controller
     ionicMaterialInk.displayEffect();
@@ -261,6 +290,26 @@ angular.module('starter.controllers', [])
     $scope.$parent.setExpanded(false);
     $scope.$parent.setHeaderFab('right');
     $scope.$parent.hideConfig();
+    $scope.$parent.hideEdit();
+
+    $timeout(function() {
+        ionicMaterialMotion.fadeSlideIn({
+            selector: '.animate-fade-slide-in .item'
+        });
+    }, 200);
+
+    // Activate ink for controller
+    ionicMaterialInk.displayEffect();
+})
+
+.controller('MyEventCtrl', function($scope, $stateParams, $timeout, ionicMaterialInk, ionicMaterialMotion) {
+    $scope.$parent.showHeader();
+    $scope.$parent.clearFabs();
+    $scope.isExpanded = false;
+    $scope.$parent.setExpanded(false);
+    $scope.$parent.setHeaderFab('right');
+    $scope.$parent.hideConfig();
+    $scope.$parent.showEdit();
 
     $timeout(function() {
         ionicMaterialMotion.fadeSlideIn({
