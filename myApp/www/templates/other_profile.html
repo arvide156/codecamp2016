@@ -3,8 +3,9 @@
         <div class="hero slide-up" style="background-color: #EBEFF2;">
             <div class="content">
                 <div class="avatar" style="background-image: url('img/damian.png');"></div>
-                <h4 style="margin-bottom:0px;">Damian Trumpxican</h4>
+                <h4 style="margin-bottom:0px;">Damian Vera</h4>
                 <i class="button icon-left ion-star button-clear button-dark" style="padding:0; color:#FEC105;"><span style="color:#6F6F74;">4</span></i>
+                <button class="button button-balanced activated button_follow">Follow</button>
             </div>
         </div>
         <div class="tabs tabs-dark tabs-icon-top static">
@@ -13,7 +14,7 @@
             <span class="tab-item" style="padding-top: 8px;"><span class="top">34</span>Badges</span>
         </div>
         <div class="list animate-fade-slide-in-right">
-            <a ui-sref="app.my_event" class="item item-icon-right profile_item" ng-repeat="event in events">
+            <a ui-sref="app.event" class="item item-icon-right profile_item" ng-repeat="event in events">
                 <div class="row">
                     <div class="col col-90">
                         <h2>{{event.nombre}}</h2>

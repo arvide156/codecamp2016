@@ -62,17 +62,10 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic-material', 'io
         }
     })
 
-    .state('app.events', {
+    .state('events', {
         url: '/events',
-        views: {
-            'menuContent': {
-                templateUrl: 'templates/gallery.html',
-                controller: 'EventsCtrl'
-            },
-            'fabContent': {
-                template: ''
-            }
-        }
+        templateUrl: 'templates/gallery.html',
+        controller: 'EventsCtrl'
     })
 
     .state('login', {
@@ -90,6 +83,19 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic-material', 'io
             }, 
             'fabContent' : {
                 template: '<button id="fab-profile" class="button button-fab button-fab-bottom-right button-positive" ui-sref="create_event"><i class="icon ion-plus"></i></button>'
+            }
+        }
+    })
+
+    .state('app.other_profile', {
+        url: '/other_profile',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/other_profile.html',
+                controller: 'OtherProfileCtrl'
+            }, 
+            'fabContent' : {
+                template: ''
             }
         }
     })
@@ -146,7 +152,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic-material', 'io
         views: {
             'menuContent': {
                 templateUrl: 'templates/my_event.html',
-                controller: 'EventCtrl'
+                controller: 'MyEventCtrl'
             },
             'fabContent': {
                 template: ''
