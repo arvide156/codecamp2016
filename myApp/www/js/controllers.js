@@ -175,7 +175,7 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('HomeCtrl', function($scope, $stateParams, $timeout, ionicMaterialInk, ionicMaterialMotion) {
+.controller('HomeCtrl', function($scope, $stateParams, $timeout, $ionicModal, ionicMaterialInk, ionicMaterialMotion) {
     $scope.$parent.showHeader();
     $scope.$parent.clearFabs();
     $scope.isExpanded = true;
@@ -187,6 +187,19 @@ angular.module('starter.controllers', [])
             selector: '.animate-fade-slide-in .item'
         });
     }, 200);
+
+    $ionicModal.fromTemplateUrl('templates/filter.html', {
+        scope: $scope,
+        animation: 'slide-in-up'
+      }).then(function(modal) {
+        $scope.modal = modal;
+      });
+      $scope.openFilter = function() {
+        $scope.modal.show();
+      };
+      $scope.closeFilter = function() {
+        $scope.modal.hide();
+      };
 
     // Activate ink for controller
     ionicMaterialInk.displayEffect();

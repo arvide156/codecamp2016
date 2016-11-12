@@ -130,12 +130,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic-material', 'io
                 controller: 'HomeCtrl'
             },
             'fabContent': {
-                template: '<button id="fab-home" class="button button-fab button-fab-top-right expanded button-energized-900 drop"><i class="icon ion-ios-arrow-down"></i></button>',
-                controller: function ($timeout) {
-                    $timeout(function () {
-                        document.getElementById('fab-home').classList.toggle('on');
-                    }, 200);
-                }
+                template: '',
             }
         }
     })
